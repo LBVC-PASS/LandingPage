@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LB — Tools & Links</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f5f3ef;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 52px 24px 80px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 56px;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7F77DD 0%, #D4537E 50%, #EF9F27 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    color: #fff;
+    flex-shrink: 0;
+    letter-spacing: -0.5px;
+  }
+
+  .header-text h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: -0.8px;
+    color: #1a1a1a;
+  }
+
+  .header-text p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #888;
+    margin-top: 3px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 14px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e0ddd8;
+  }
+
+  /* ── GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 44px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: #fff;
+    border: 1.5px solid var(--ca, #e0ddd8);
+    border-radius: 16px;
+    padding: 16px 18px;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px color-mix(in srgb, var(--ca, #ccc) 25%, transparent);
+    border-color: var(--ca);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 11px;
+  }
+
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    background: color-mix(in srgb, var(--ca) 14%, #fff);
+    flex-shrink: 0;
+  }
+
+  .badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 99px;
+    background: color-mix(in srgb, var(--ca) 14%, #fff);
+    color: color-mix(in srgb, var(--ca) 80%, #222);
+    border: 1px solid color-mix(in srgb, var(--ca) 30%, transparent);
+    white-space: nowrap;
+  }
+
+  .card-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 3px;
+    color: #1a1a1a;
+  }
+
+  .card-desc {
+    font-size: 11.5px;
+    color: #888;
+    line-height: 1.45;
+  }
+
+  .card-stripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--ca);
+    border-radius: 16px 16px 0 0;
+    opacity: 0.7;
+  }
+
+  /* ── ACCENT COLOURS ──
+     To change a card's colour, update --ca to any hex value.
+     Each card has its own style="--ca: #hexcode" inline.        */
+  .a-purple { --ca: #7F77DD; }
+  .a-pink    { --ca: #D4537E; }
+  .a-teal    { --ca: #1D9E75; }
+  .a-amber   { --ca: #EF9F27; }
+  .a-blue    { --ca: #378ADD; }
+  .a-coral   { --ca: #D85A30; }
+  .a-green   { --ca: #639922; }
+  .a-red     { --ca: #E24B4A; }
+  .a-plum    { --ca: #9B4DCA; }
+  .a-sky     { --ca: #0EA5E9; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #ccc;
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ════════════════════════════════
+       HEADER
+       Change "LB" to your initials.
+       Change the subtitle as needed.
+  ════════════════════════════════ -->
+  <header>
+    <div class="avatar">LB</div>
+    <div class="header-text">
+      <h1>Tools &amp; Links</h1>
+      <p>// Loïc Boyer · Vanier Security &amp; Safety</p>
+    </div>
+  </header>
+
+
+  <!-- ════════════════════════════════
+       SECTION: GITHUB TOOLS
+       Add cards by duplicating a <a> block.
+       Update href, icon emoji, card-name, card-desc.
+       Change accent class (a-purple, a-teal, a-amber, etc.)
+  ════════════════════════════════ -->
+  <div class="section-label">GitHub Tools</div>
+  <div class="grid">
+
+    <a class="card a-purple" href="https://github.com/LBVC-PASS/ProcurementInfo" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">⚙️</div>
+        <span class="badge">GitHub</span>
+      </div>
+      <div class="card-name">Procurement</div>
+      <div class="card-desc">Thresholds, approval authority &amp; tendering rules</div>
+    </a>
+
+    <a class="card a-teal" href="https://lbvc-pass.github.io/dashboard/" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">📊</div>
+        <span class="badge">GitHub</span>
+      </div>
+      <div class="card-name">Capital Dashboard</div>
+      <div class="card-desc">Construction &amp; project budget tracker</div>
+    </a>
+
+    <!-- Placeholder — update href when ready -->
+    <a class="card a-amber" href="#" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">🏠</div>
+        <span class="badge">GitHub</span>
+      </div>
+      <div class="card-name">Personal Dashboard</div>
+      <div class="card-desc">Personal hub — coming soon</div>
+    </a>
+
+  </div>
+
+
+  <!-- ════════════════════════════════
+       SECTION: WORK BOOKMARKS
+  ════════════════════════════════ -->
+  <div class="section-label">Work</div>
+  <div class="grid">
+
+    <a class="card a-blue" href="https://www.iaclea.org" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">🎓</div>
+        <span class="badge">Web</span>
+      </div>
+      <div class="card-name">IACLEA</div>
+      <div class="card-desc">Campus law enforcement association</div>
+    </a>
+
+    <a class="card a-coral" href="https://www.iacp.org" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">🚔</div>
+        <span class="badge">Web</span>
+      </div>
+      <div class="card-name">IACP</div>
+      <div class="card-desc">International Assoc. of Chiefs of Police</div>
+    </a>
+
+    <a class="card a-red" href="https://www.asisonline.org" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">🛡️</div>
+        <span class="badge">Web</span>
+      </div>
+      <div class="card-name">ASIS International</div>
+      <div class="card-desc">Security management &amp; PSP certification</div>
+    </a>
+
+    <a class="card a-green" href="https://www.pmi.org" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">📐</div>
+        <span class="badge">Web</span>
+      </div>
+      <div class="card-name">PMI</div>
+      <div class="card-desc">Project Management Institute</div>
+    </a>
+
+    <a class="card a-plum" href="https://seao.ca" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">📋</div>
+        <span class="badge">Web</span>
+      </div>
+      <div class="card-name">SEAO</div>
+      <div class="card-desc">Quebec public procurement portal</div>
+    </a>
+
+    <a class="card a-sky" href="https://powerdms.com/ui/login.aspx" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">📄</div>
+        <span class="badge">App</span>
+      </div>
+      <div class="card-name">PowerDMS</div>
+      <div class="card-desc">Policy &amp; document management</div>
+    </a>
+
+    <a class="card a-amber" href="https://app.agency360.com/app/login" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">🔎</div>
+        <span class="badge">App</span>
+      </div>
+      <div class="card-name">Agency360</div>
+      <div class="card-desc">Performance &amp; training platform</div>
+    </a>
+
+    <a class="card a-teal" href="https://vanier.controlperfect.app/Login/Selector" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">📝</div>
+        <span class="badge">App</span>
+      </div>
+      <div class="card-name">ControlPerfect</div>
+      <div class="card-desc">Incident &amp; report management (ERS)</div>
+    </a>
+
+    <a class="card a-purple" href="https://vaniercollege.omnivox.ca/Login/Account/Login" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">🏫</div>
+        <span class="badge">App</span>
+      </div>
+      <div class="card-name">Omnivox</div>
+      <div class="card-desc">Vanier college portal</div>
+    </a>
+
+    <a class="card a-red" href="https://www.alarm.com/login" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">🔔</div>
+        <span class="badge">App</span>
+      </div>
+      <div class="card-name">Alarm.com</div>
+      <div class="card-desc">Security monitoring &amp; alerts</div>
+    </a>
+
+  </div>
+
+
+  <!-- ════════════════════════════════
+       SECTION: PERSONAL BOOKMARKS
+  ════════════════════════════════ -->
+  <div class="section-label">Personal</div>
+  <div class="grid">
+
+    <a class="card a-blue" href="https://www.facebook.com" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">👥</div>
+        <span class="badge">Personal</span>
+      </div>
+      <div class="card-name">Facebook</div>
+      <div class="card-desc">Social &amp; community updates</div>
+    </a>
+
+    <a class="card a-coral" href="https://www.reddit.com" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">🤿</div>
+        <span class="badge">Personal</span>
+      </div>
+      <div class="card-name">Reddit</div>
+      <div class="card-desc">The front page of the internet</div>
+    </a>
+
+    <a class="card a-sky" href="https://www.linkedin.com" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">💼</div>
+        <span class="badge">Personal</span>
+      </div>
+      <div class="card-name">LinkedIn</div>
+      <div class="card-desc">Professional network</div>
+    </a>
+
+    <a class="card a-red" href="https://www.youtube.com" target="_blank">
+      <div class="card-stripe"></div>
+      <div class="card-top">
+        <div class="card-icon">▶️</div>
+        <span class="badge">Personal</span>
+      </div>
+      <div class="card-name">YouTube</div>
+      <div class="card-desc">Videos &amp; rabbit holes</div>
+    </a>
+
+  </div>
+
+  <footer>last updated 2026 · github.com/LBVC-PASS</footer>
+
+</div>
+</body>
+</html>
