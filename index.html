@@ -181,6 +181,55 @@
   .a-plum    { --ca: #9B4DCA; }
   .a-sky     { --ca: #0EA5E9; }
 
+  /* ── SEARCH ── */
+  .search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 48px;
+  }
+
+  .search-input {
+    flex: 1;
+    height: 52px;
+    padding: 0 20px;
+    border: 1.5px solid #e0ddd8;
+    border-radius: 99px;
+    background: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: #1a1a1a;
+    outline: none;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease;
+  }
+
+  .search-input::placeholder { color: #bbb; }
+
+  .search-input:focus {
+    border-color: #7F77DD;
+    box-shadow: 0 0 0 3px color-mix(in srgb, #7F77DD 15%, transparent);
+  }
+
+  .search-btn {
+    height: 52px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 99px;
+    background: #7F77DD;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.16s ease, transform 0.16s ease;
+    white-space: nowrap;
+  }
+
+  .search-btn:hover {
+    background: #6a62c8;
+    transform: translateY(-1px);
+  }
+
   /* ── FOOTER ── */
   footer {
     text-align: center;
@@ -206,6 +255,15 @@
       <p>// Loïc Boyer · Vanier Security &amp; Safety</p>
     </div>
   </header>
+
+
+  <!-- ════════════════════════════════
+       SEARCH BAR
+  ════════════════════════════════ -->
+  <form class="search-form" action="https://www.google.com/search" method="get" target="_blank">
+    <input class="search-input" type="text" name="q" placeholder="Search Google…" autocomplete="off">
+    <button class="search-btn" type="submit">Search</button>
+  </form>
 
 
   <!-- ════════════════════════════════
