@@ -16,22 +16,22 @@
   }
 
   .page {
-    max-width: 820px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 52px 24px 80px;
+    padding: 64px 48px 100px;
   }
 
   /* ── HEADER ── */
   header {
     display: flex;
     align-items: center;
-    gap: 18px;
-    margin-bottom: 56px;
+    gap: 24px;
+    margin-bottom: 72px;
   }
 
   .avatar {
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     background: linear-gradient(135deg, #7F77DD 0%, #D4537E 50%, #EF9F27 100%);
     display: flex;
@@ -39,7 +39,7 @@
     justify-content: center;
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: 19px;
+    font-size: 24px;
     color: #fff;
     flex-shrink: 0;
     letter-spacing: -0.5px;
@@ -48,16 +48,16 @@
   .header-text h1 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: 26px;
-    letter-spacing: -0.8px;
+    font-size: 36px;
+    letter-spacing: -1px;
     color: #1a1a1a;
   }
 
   .header-text p {
     font-family: 'DM Mono', monospace;
-    font-size: 11px;
+    font-size: 13px;
     color: #888;
-    margin-top: 3px;
+    margin-top: 4px;
     letter-spacing: 0.05em;
   }
 
@@ -67,11 +67,11 @@
     align-items: center;
     gap: 10px;
     font-family: 'DM Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #aaa;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
   }
 
   .section-label::after {
@@ -84,17 +84,17 @@
   /* ── GRID ── */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 10px;
-    margin-bottom: 44px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    margin-bottom: 56px;
   }
 
   /* ── CARD ── */
   .card {
     background: #fff;
     border: 1.5px solid var(--ca, #e0ddd8);
-    border-radius: 16px;
-    padding: 16px 18px;
+    border-radius: 20px;
+    padding: 22px 24px;
     text-decoration: none;
     display: block;
     transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
@@ -113,28 +113,28 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 11px;
+    margin-bottom: 14px;
   }
 
   .card-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 17px;
+    font-size: 22px;
     background: color-mix(in srgb, var(--ca) 14%, #fff);
     flex-shrink: 0;
   }
 
   .badge {
     font-family: 'DM Mono', monospace;
-    font-size: 8.5px;
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 3px 8px;
+    padding: 4px 10px;
     border-radius: 99px;
     background: color-mix(in srgb, var(--ca) 14%, #fff);
     color: color-mix(in srgb, var(--ca) 80%, #222);
@@ -145,13 +145,13 @@
   .card-name {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 3px;
+    font-size: 18px;
+    margin-bottom: 5px;
     color: #1a1a1a;
   }
 
   .card-desc {
-    font-size: 11.5px;
+    font-size: 13.5px;
     color: #888;
     line-height: 1.45;
   }
@@ -217,7 +217,7 @@
   <div class="section-label">GitHub Tools</div>
   <div class="grid">
 
-    <a class="card a-purple" href="https://github.com/LBVC-PASS/ProcurementInfo" target="_blank">
+    <a class="card a-purple" href="https://lbvc-pass.github.io/ProcurementInfo/" target="_blank">
       <div class="card-stripe"></div>
       <div class="card-top">
         <div class="card-icon">⚙️</div>
@@ -233,7 +233,7 @@
         <div class="card-icon">📊</div>
         <span class="badge">GitHub</span>
       </div>
-      <div class="card-name">Capital Dashboard</div>
+      <div class="card-name">Work Dashboard</div>
       <div class="card-desc">Construction &amp; project budget tracker</div>
     </a>
 
